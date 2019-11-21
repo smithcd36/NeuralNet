@@ -3,6 +3,7 @@ import random as r
 
 from math import log10, floor
 
+
 class dataGen:
     def __roundSigFig__(self, x, sig):
         return round(x, sig - int(m.floor(m.log10(abs(x)))) - 1)
