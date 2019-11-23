@@ -36,10 +36,10 @@ class NeuralNetwork:
         p = str(str(nn.output).split('\n')).replace("]", " ").replace("[", " ") \
             .replace(" ", "").replace("'", '').replace(",", ' ')
         q = p.split(' ')
-        r = round(float(q.pop(0).replace("'", ''))), \
-            round(float(q.pop(0).replace("'", ''))), \
-            round(float(q.pop(0).replace("'", ''))), \
-            round(float(q.pop(0).replace("'", '')))
+        r = round(10 * float(q.pop(0).replace("'", ''))) / 10, \
+            round(10 * float(q.pop(0).replace("'", ''))) / 10, \
+            round(10 * float(q.pop(0).replace("'", ''))) / 10, \
+            round(10 * float(q.pop(0).replace("'", ''))) / 10
         r = str(r).replace(")", '').replace("(", '').replace(",", "")
         print("Raw:\n" + p + "\n\n" + "Rounded:\n" + r)
         print("---------------------break---------------------")
@@ -58,11 +58,11 @@ def buttonthing():
 
 
 if __name__ == "__main__":
-    X = np.array([[0, 0, 1],
+    X = np.array([[0, 0.6, 1],
                   [0, 1, 1],
                   [1, 0, 1],
                   [1, 1, 1]])
-    y = np.array([[0], [1], [1], [0]])
+    y = np.array([[0], [1], [0.9], [0]])
     nn = NeuralNetwork(X, y)
 
     for i in range(1500):

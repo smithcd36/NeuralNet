@@ -1,8 +1,6 @@
 import math as m
 import random as r
 
-from math import log10, floor
-
 
 class dataGen:
     def __roundSigFig__(self, x, sig):
